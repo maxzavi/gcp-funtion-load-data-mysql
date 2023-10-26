@@ -1,6 +1,6 @@
 {
     "dependencies": {
         "@google-cloud/functions-framework": "^3.0.0",
-        "follow-redirects": "^1.14.3"
+        "follow-redirects": "^1.15.3"
     }
 }

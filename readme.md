@@ -1,15 +1,7 @@
-## Get Access Token
-
-See https://cloud.google.com/compute/docs/access/authenticate-workloads?hl=es-419
-
-```cmd
-curl "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token" \
--H "Metadata-Flavor: Google"
-```
 
 ## Gcloud and API 
 
-See https://cloud.google.com/sql/docs/mysql/import-export/import-export-csv?hl=es-419#rest-v1_1
+API rest load file from bucket to Cloud SQL table:  https://cloud.google.com/sql/docs/mysql/import-export/import-export-csv?hl=es-419#rest-v1_1
 
 ```cmd
 curl -X POST \
@@ -36,18 +28,26 @@ Request Json:
 }
 ```
 
+## Get Access Token
+
+Get access token from service current  https://cloud.google.com/compute/docs/access/authenticate-workloads?hl=es-419
+
+```cmd
+curl "http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token" \
+-H "Metadata-Flavor: Google"
+```
+
 ## Connect to mysql
 
 ```cmd
-mysql -h 34.29.74.69 -u umonitoreo -p DBMONITOREO
+mysql -h <<host> -u <<username>> -p <<instance>>
 ```
 
 ## Create table
 ```sql
-CREATE TABLE mzv_test (
-    column1 varchar(100),
-    column2 varchar(100),
-    column3 varchar(100),
-    comlumn4 bigint
+CREATE TABLE pruebamzv (
+    sku varchar(11),
+    name varchar(100),
+    price decimal(40,6)
     );
 ```
